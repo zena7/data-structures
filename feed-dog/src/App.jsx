@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import "./App.css";
+import mainDog from "./assets/mainDog.png";
 
 function App() {
   const windowWidth = window.innerWidth;
@@ -66,7 +67,7 @@ function App() {
       <button onClick={onHandleClickMinus}>Minus</button>
       <button onClick={onHandleStartGame}>Start game</button>
       <div className='player' ref={playerRef}>
-        <p>Dog</p>
+        <img src={mainDog} alt='iconOfMainDog'></img>
       </div>
     </>
   );
