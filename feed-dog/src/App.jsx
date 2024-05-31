@@ -9,7 +9,10 @@ function App() {
   const [count, setCount] = useState(0);
   // const [food, setfood] = useState([]);
   const [shift, setShift] = useState(0);
+  // const [leftСoordinate, setLeftСoordinate] = useState(0);
+  // const [rightСoordinate, setRightСoordinate] = useState(0);
   const playerRef = useRef(null);
+  const marginOfError = 10;
 
   // const windowHeight = window.innerHeight;
   // const windowWidth = window.innerWidth;
@@ -27,43 +30,34 @@ function App() {
   // }
 
   useEffect(() => {
-    // const player = document.querySelector(".player");
     const step = 4;
-    // setShift((prev) => {
-    //   let newJ = prev + playerRef.current.getBoundingClientRect();
-    //   console.log("INITIAL shift", newJ);
-    //   return newJ;
-    // });
 
     document.addEventListener("keydown", function (event) {
-      if (event.code === "ArrowRight") {
+      let rightCoord = playerRef.current.getBoundingClientRect().right;
+      let leftCoord = playerRef.current.getBoundingClientRect().left;
+
+      if (
+        event.code === "ArrowRight" &&
+        rightCoord < windowWidth - marginOfError
+      ) {
         setShift((prev) => {
           let newShift = prev - step;
-
-          console.log(
-            `DOG TO RIGHT - shift: ${newShift}, width: ${windowWidth} ${
-              playerRef.current.getBoundingClientRect().left
-            },  ${playerRef.current.getBoundingClientRect().right}`
-          );
           playerRef.current.style.right = `${newShift}%`;
           return newShift;
         });
-      } else if (event.code === "ArrowLeft") {
+      } else if (event.code === "ArrowLeft" && leftCoord > 0 + marginOfError) {
         setShift((prev) => {
           let newShift = prev + step;
-
-          console.log(
-            `DOG TO LEFT - shift: ${newShift}, width: ${windowWidth},  ${
-              playerRef.current.getBoundingClientRect().left
-            },  ${playerRef.current.getBoundingClientRect().right}`
-          );
           playerRef.current.style.right = `${newShift}%`;
           return newShift;
         });
       }
     });
   }, []);
-  function onHandleStartGame() {}
+
+  function onHandleStartGame() {
+    console.log("Let's start");
+  }
 
   return (
     <>
