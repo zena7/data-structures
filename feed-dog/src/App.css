@@ -1,8 +1,13 @@
 #root {
   max-width: 1280px;
+  min-height: 100vh;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -39,4 +44,34 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* .player {
+  position: relative;
+  border: 1px black solid;
+  padding: 0 0;
+  width: 30%;
+  padding-bottom: 4%;
+} */
+
+/* .cryingDog,
+.happyDog {
+  display: none;
+} */
+
+.food {
+  width: 4rem;
+  height: 4rem;
+  background-color: paleturquoise;
+  position: absolute;
+  animation: fall 3s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    top: -50px; /* Start slightly above the viewport */
+  }
+  100% {
+    top: 100vh; /* End slightly below the viewport */
+  }
 }

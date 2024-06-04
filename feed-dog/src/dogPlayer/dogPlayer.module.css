@@ -1,0 +1,28 @@
+.player {
+  position: relative;
+  border: 1px black solid;
+  padding: 0 0;
+  width: 30%;
+  /* height: 10%; */
+  padding-bottom: 4%;
+}
+
+.showIconDog {
+  display: relative;
+}
+
+.hideIconDog {
+  display: none;
+}
+
+.happyDog {
+  display: relative;
+}
+
+.cryingDog {
+  display: relative;
+}
+
+.player img {
+  width: 100%;
+}
