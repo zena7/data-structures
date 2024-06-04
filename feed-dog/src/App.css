@@ -46,15 +46,32 @@
   color: #888;
 }
 
-.player {
+/* .player {
   position: relative;
   border: 1px black solid;
   padding: 0 0;
   width: 30%;
-  /* height: 10%; */
   padding-bottom: 4%;
+} */
+
+/* .cryingDog,
+.happyDog {
+  display: none;
+} */
+
+.food {
+  width: 4rem;
+  height: 4rem;
+  background-color: paleturquoise;
+  position: absolute;
+  animation: fall 3s linear infinite;
 }
 
-.player img {
-  width: 100%;
+@keyframes fall {
+  0% {
+    top: -50px; /* Start slightly above the viewport */
+  }
+  100% {
+    top: 100vh; /* End slightly below the viewport */
+  }
 }
